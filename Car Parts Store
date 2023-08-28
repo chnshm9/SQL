@@ -1,0 +1,28 @@
+--Create a car parts store database
+
+CREATE TABLE carstore (id integer primary key, partname TEXT, category TEXT, price INTEGER, aisle INTEGER);
+
+INSERT INTO carstore VALUES (1,"intake" ,"engine", 300, 1);
+INSERT INTO carstore VALUES (2,"turbo" ,"engine", 2000, 2);
+INSERT INTO carstore VALUES (3,"intake manifold" ,"engine", 500, 3);
+INSERT INTO carstore VALUES (4,"exhaust manifold" ,"engine", 600, 1);
+INSERT INTO carstore VALUES (5,"air filter" ,"engine", 50, 2);
+INSERT INTO carstore VALUES (6,"struts" ,"suspension", 800, 4);
+INSERT INTO carstore VALUES (7,"springs" ,"suspension", 900, 5);
+INSERT INTO carstore VALUES (8,"rear sway bar" ,"suspension", 400, 6);
+INSERT INTO carstore VALUES (9,"front sway bar" ,"suspension", 200, 7);
+INSERT INTO carstore VALUES (10,"front strut tower brace" ,"suspension", 200, 4);
+INSERT INTO carstore VALUES (11,"front splitter" ,"aero", 1000, 8);
+INSERT INTO carstore VALUES (12,"rear spoiler" ,"aero", 1100, 9);
+INSERT INTO carstore VALUES (13,"rear diffuser" ,"aero", 1500, 10);
+INSERT INTO carstore VALUES (14,"aero side mirrors" ,"aero", 750, 8);
+INSERT INTO carstore VALUES (15,"side window deflectors" ,"aero", 350, 9);
+
+--display the sum of all car parts
+select * from carstore;
+select sum(price) from carstore;
+
+--what is the avg price of items in the engine section? 
+SELECT AVG(price) "avg engine item price"
+FROM carstore
+where category='engine'; 
